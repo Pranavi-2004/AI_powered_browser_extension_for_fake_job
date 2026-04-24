@@ -1,0 +1,63 @@
+/* HireShield Content Script Styles */
+
+/* Selected job highlighting */
+.hireshield-selected {
+    outline: 4px solid #4CAF50 !important;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+/* Feedback notification */
+.hireshield-feedback {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999999;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Pulse animation for selected job */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(76, 175, 80, 0.8);
+    }
+}
+
+.hireshield-selected {
+    animation: pulse 2s infinite;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide out animation */
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}

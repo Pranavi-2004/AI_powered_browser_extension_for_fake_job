@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HireShield Analytics</title>
+    <script src="chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f4f6f9;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            flex: 1;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .big {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .charts {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .chart-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            flex: 1;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+
+        #recentScans {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+
+        .scan-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: white;
+            font-size: 11px;
+            margin-left: 10px;
+        }
+
+        .HIGH_RISK { background: #e53935; }
+        .SUSPICIOUS { background: #fb8c00; }
+        .LIKELY_REAL { background: #43a047; }
+
+        .date {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>HireShield Analytics Dashboard</h1>
+
+<div class="cards">
+    <div class="card">
+        Total Scans
+        <div id="totalScans" class="big">0</div>
+    </div>
+    <div class="card">
+        Scams Detected
+        <div id="scamsDetected" class="big">0</div>
+    </div>
+    <div class="card">
+        Detection Rate
+        <div id="detectionRate" class="big">0%</div>
+    </div>
+</div>
+
+<div class="charts">
+    <div class="chart-box">
+        <canvas id="pieChart"></canvas>
+    </div>
+    <div class="chart-box">
+        <canvas id="barChart"></canvas>
+    </div>
+</div>
+
+<h2>Recent Scans</h2>
+<div id="recentScans"></div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
